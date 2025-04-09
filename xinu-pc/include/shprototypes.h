@@ -82,5 +82,8 @@ extern shellcmd xsh_programaProfe ();
 /* in file xsh_ahorcado.c */
 extern shellcmd xsh_ahorcado();
 
+/* in file xsh_listarPrimos.c */
+extern shellcmd xsh_listarPrimos();
+
 /* in file xsh_help.c */
 extern	shellcmd  xsh_help	(int32, char *[]);
