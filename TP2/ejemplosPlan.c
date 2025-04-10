@@ -1,25 +1,29 @@
 /*
 EJERCICIO 3: 
+              T        q15         q10         q10        q5       T          T                      T
+(0-10)p1,(10-15)p1, (15-20)p2, (20-30)p3, (30-40)p4, (40-45)p3, (45-50)p5, (50-55)p3, (55-65)p6, (65-70)p6
+(70-80)p4, (80-90)p2, (90-95)p2
 
-(0-15)p1, (15-20)p5, (20-35)p6, (35-45)p3, (45-55)p4, (55-65)p3, (65-75)p4, (75-95)p2
 el tiempo de turnaround para cada proceso es cuanto tardaron desde estar listos hasta ser terminados 
-turnaround para p1 = 15
-turnaround para p2 = 95
-turnaround para p3 = 65
-turnaround para p4 = 75
-turnaround para p5 = 20
-turnaround para p6 = 35
+turnaround para p1 = 15 - 0  = 15
+turnaround para p2 = 95 - 0  = 95
+turnaround para p3 = 55 - 20 = 35
+turnaround para p4 = 80 - 25 = 55
+turnaround para p5 = 50 - 45 = 5
+turnaround para p6 = 70 - 55 = 15
+turnaround = momento de finalizacion - momento en que llego a la fila
 
-valor medio de turnaround = (15+95+65+75+20+35)/6 = 50,83
+valor medio de turnaround = (15+95+35+55+5+15)/6 = 36,66
 
 tiempo espera de p1 = 0
-tiempo espera de p2 = 75
-tiempo espera de p3 = 55-45+35 = 45
-tiempo espera de p4 = 65-55+45 = 55
-tiempo espera de p5 = 15
-tiempo espera de p6 = 20 
+tiempo espera de p2 = 95 - 20 = 75
+tiempo espera de p3 = 35 - 20 = 15
+tiempo espera de p4 = 55 - 20 = 35
+tiempo espera de p5 = 50 - 5 = 45
+tiempo espera de p6 = 15 - 15 = 0
+momento de finalizacion - tiempo de ejecucion
 
-valor medio de espera = (0+75+45+55+15+20)/6 = 35
+valor medio de espera = (0+75+15+35+45+0)/6 = 28,33
 
 EJERCICIO 4
 FCFS
