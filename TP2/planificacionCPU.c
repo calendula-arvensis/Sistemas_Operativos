@@ -36,17 +36,4 @@ round-robin en la lista de procesos de mayor prioridad, designando la prioridad 
 
 "multilevel feedback queue scheduling" en el anterior, los procesos se quedan en la misma lista para siempre, en 
 cambio este algoritmo permite a los procesos cambiar de lista, designando la prioridad de una forma muy compleja
-
-ejercicio 3: 
-
-(0-15)p1, (15-20)p5, (20-35)p6, (35-45)p3, (45-55)p4, (55-65)p3, (65-75)p4, (75-95)p2
-el tiempo de turnaround para cada proceso es cuanto tardaron desde estar listos hasta ser terminados 
-turnaround para p1 = 15
-turnaround para p2 = 95
-turnaround para p3 = 65
-turnaround para p4 = 75
-turnaround para p5 = 20
-turnaround para p6 = 35
-
-valor medio de turnaround = (15+95+65+75+20+35)/6 = 50,83
 */
