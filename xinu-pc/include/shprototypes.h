@@ -85,5 +85,11 @@ extern shellcmd xsh_ahorcado();
 /* in file xsh_listarPrimos.c */
 extern shellcmd xsh_listarPrimos();
 
+/* in file xsh_prodConsumidor.c */
+extern shellcmd xsh_prodConsumidor();
+
+/*in file xsh_mut.c */
+extern shellcmd xsh_mut();
+
 /* in file xsh_help.c */
 extern	shellcmd  xsh_help	(int32, char *[]);
