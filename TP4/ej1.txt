@@ -1,1 +1,16 @@
-hello word
+Estrategias de ubicacion de bloques de de archivos: 
+La memoria suele estar dividia en dos particiones, una para el sistema operativo y otra para los procesos del usuario
+
+*contiguo:las estrategias de bloques de datos contiguos le asignan a cada proceso un bloque contiguo de memoria para utilizar, 
+de esta forma los procesos estan protegidos entre si, pues no tienen que preocuparse por modificar o utilizar memoria que no le corresponde 
+Esta estrategia trae problemas de fragmentacion, espacio entre los procesos sin utilizar, que no le alcanzan a ningun proceso
+
+
+*posiblemente disperso con lista enlazada: un archivo ocupa una cantidad de bloques posiblemente dispersos, cada bloque tiene un puntero al siguiete
+Conceptualmente solo soloporta acceso secuencial. Los problemas con esta estrategia es que utiliza bytes del bloque para punteros y 
+realiza muchas lecturas a disco para alcanzar un bloque o byte. 
+
+*posiblemente disperso con bloques de indices: Todos los punteros a bloques de disco de un archivo se almacenan en un bloque de indices, cada archivo 
+tiene su propio bloque de indices. En la entrada del directorio hay un puntero al bloque de indices 
+
+En el caso de CANON, quien produce camaras de fotografia digital, utilizaria la estrategia de bloquea contiguos, ya que las fotos ocuparan mas o menos la misma cantidad de bytes. 

@@ -1,0 +1,13 @@
+los i-nodes:
+ * todos los punteros a bloques de disco de un archivo se almacenan en un bloque de indices 
+ * cada archivo tiene su propio bloque de indices 
+ *en la entrada del directorio hay un puntero al bloque de indices
+ 
+
+ cuantos accesos a discos son necesarios para obtener la estructura i-node del archivo tareas.txt? 
+ El archivo se encuentra en: 
+ /export/home/alumno/so/tareas.txt
+ 
+En un inodo hay 15 punteros, los primeros 12 de estos punteros son punteros a bloques directos, es decir, 
+que 12 de estos punteros tienen la direccion de bloques de informacion del archivo. 
+De los 3 punteros restantes, el primero es un puntero indirecto, es decir, que apunta a un bloque de punteros directos 
