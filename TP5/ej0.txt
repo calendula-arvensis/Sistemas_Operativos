@@ -1,0 +1,8 @@
+a) creo que el programa solicita N*BSIZE bytes, siento n = 240000 y BSIZE = 4096. 
+b) el tiempo de ejecucion del programa lo saque utilizando "time ./ej0" en consola 
+    real 0m19, 256s
+    user 0m19, 142s
+    sys 0m0, 113s
+c) La variable puntero pp es una variable global, por lo que se almacena en el segmento de uninitialized data y luego en el heap, por ser inicializada con malloc() (creo)
+    Luego, las variables i,j,k son variables locales, por lo que van en el segmento de pila
+d)malloc reserva memoria en el segmento de Heap, puede utilizar los system calls break (brk?) y do_mmap(). 

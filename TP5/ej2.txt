@@ -1,0 +1,54 @@
+2) a) La version original demora: 
+        real 0m18,178s
+        user 0m17,995s
+        sys  0m0, 180s
+      La version 2 demora: 
+        real 0m1, 808s
+        user 0m1, 647s
+        sys  0m0, 160s
+      La version 3 demora: 
+        real 0m5, 720s
+        user 0m5, 566s
+        sys  0m0, 152s
+
+b)  
+VERSION ORIGINAL
+    Performance counter stats for './ej1':
+
+       397.770.824      dTLB-store-misses:u                                                
+     1.302.575.043      cache-misses:u                                                     
+
+      17,750928274 seconds time elapsed
+
+      17,573373000 seconds user
+       0,168013000 seconds sys
+
+VERSION 2
+       Performance counter stats for './ej2V2':
+
+       228.141      dTLB-store-misses:u                                                
+       5.375.419      cache-misses:u                                                     
+
+       1,834663008 seconds time elapsed
+
+       1,757174000 seconds user
+       0,076224000 seconds sys
+
+VERSION 3
+        Performance counter stats for './ej2V3':
+
+        18.356.260      dTLB-store-misses:u                                                
+       415.809.730      cache-misses:u                                                     
+
+       5,665568315 seconds time elapsed
+
+       5,529426000 seconds user
+       0,115946000 seconds sys
+d)
+La cache de datos es una memoria intermedia entre el procesador y la RAM, se usa para guardar datos frecuentemente accedidos y algunos datos a su alrededor. (si el dato que estas buscando ya esta en la cache, se ahorran varios ciclos de reloj, mejorando el rendimiento significativamente)
+La TLB es una chache de traducciones virtuales a direcciones fisicas de memoria, contiene entradas de las tablas de paginas del sistema de memoria virtual (cada entrada tiene una direccion virtual su direccion fisica correspondiente)
+
+e) El peor rendimiento lo tiene la version original(18,178s), mas que triplicando el rendimiento de la version 3(5,720s), asi como tambien triplica los fallos al cache y TLB
+El mejor rendimiento lo tiene la version 2 por mucho(1,808s), siendo tambien la que menor fallos a TLB y cache. 
+La gran diferencia entre las versiones es el ordene en el que recorre la memoria, la version 2 tiene el recorrido comun de matris, primero recorre todas la columnas de una fila y lugo pasa a la fila siguiente (todo de forma contigua, como si recorriera una lista de listas). Entonces los datos cargados en cache tienen significativamente mas chances de ser los siguientes a utilizar.
+En cambio la version original recorre todas las filas de una columna y luego pasa a la proxima (como buscar todos los primeros elementos de muchas filas, luego todos los segundos, etc) la cache no predice ese orden y por consecuencia los datos cargados tienen poca chance de ser necesitados. 
