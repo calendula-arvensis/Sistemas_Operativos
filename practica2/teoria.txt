@@ -1,0 +1,45 @@
+1) Que problemas podria ocacionar a su sistema XINU que un programa no utilice apropiadamente el paradigma
+open(), read(), close()? Por ejemplo, si no se utiliza apropiadamente en la resolucion del ejercicio 2. Justifique
+
+    Si un programa en XINU no usa correctamente open(), read(), close(), puede provocar varios problemas graves. Los recursos del sistema, 
+como los descriptores de archivos, pueden agotarse si no se cierran correctamente, causando que otros programas no puedan abrir archivos.
+Esto puede llevar a corrupcion de datos, inconsistencias y condiciones de carrera, donde multiples procesos interfieren entre si, afectando el rendimiento y la estabilidad del sistema.
+Ademas, el uso inadecuado de estos recursos puede exponer el sistema a riesgos de seguridad y hacer que el rendimiento general se degrade, resultando en aplicaciones menos responsivas y posibles fallos del sistema.
+
+    En xinu, cada llamada a open() (sobre el teclado, un archivo en disco, o un socket de red) reserva internamente una entrada en la tabla de dispositivos abiertos,
+si nunca se invoca close() el descriptor queda ocupado indefinidamente, y eventualmente se agotan las entradas disponibles en la tabla de dispositivos. 
+    Si se ejecuta read() sin haber invocado correctamente open() o si no se chequea el valor de retorno de read(), pueden ocurrir lecturas invalidas.
+
+2) Es conocimiento general que los sistemas Windows de empresas y personas sufren ataques de distintas indoles todo el tiempo. Millones de agujeros de seguridad en Windows 
+se han reportado en internet en los ultimos 30 anios. Si usted desarrolla dos programas en Windows (prg1 y prog2), y dos programas en xinu (prg1 y prog2), responda: En que sistema es mas sencillo realizar un ataque 
+desde prog1 y prog2? 
+
+    En Windows, es más sencillo realizar un ataque desde prog1 a prog2 que en XINU. Windows es un 
+sistema operativo complejo y ampliamente utilizado, lo que lo hace un objetivo frecuente para 
+atacantes. Con millones de vulnerabilidades reportadas a lo largo de los años, existen múltiples 
+vectores de ataque como acceso a memoria, exploits de red y privilegios escalados que pueden ser 
+explotados por un programa malicioso. En cambio, XINU es un sistema operativo mucho más simple y 
+específico para entornos educativos y embebidos, con un diseño minimalista que reduce la superficie 
+ede ataque y las posibles vulnerabilidades. Además, XINU no tiene la misma complejidad y 
+características que Windows, lo que hace que los ataques entre programas en XINU sean mucho más 
+difíciles de llevar a cabo.
+
+3) Sean las siguientes estructuras de dos sistemas de archivos: FAT y un FS UNIX
+    -Suponga que el i-nodo de un archivo deseado ya esta en RAM en el UNIX FS
+    -Suponga que la FAT esta en RAM
+    -Suponga que en ambos sistemas el tamanio maximo para un archivo son iguales, y los bloques de datos son del mismo tamanio
+Si solo se desea conocer los numeros de bloques en el disco que corresponden a los datos del archivo deseado (no su contenido), 
+En cual de los dos sistemas de archivos seria mas veloz obtener todos los numeros de bloques de datos que pertenecen al archivo? 
+Justifique.
+
+    Si el archivo cabe completamente en los punteros directos del i‐nodo
+el sistema basado en i‐nodos de UNIX es más veloz, porque basta leer directamente desde el i‐nodo en RAM todos los números de bloque (lecturas contiguas sencillas).
+
+    Si el archivo requiere bloques indirectos (i.e., ocupa más bloques que los punteros directos del i‐nodo), 
+el sistema FAT con la FAT entera en RAM será más veloz en la práctica: recorrer N entradas en la tabla 
+FAT (todas en RAM) es más rápido que hacer al menos una lectura de disco para traer el (los) bloque(s) 
+indirecto(s) en UNIX‐FS.
+
+    En síntesis, la ventaja de UNIX‐FS aparece en archivos que no necesitan indirectos (lectura inmediata de 
+punteros directos en RAM). La ventaja de FAT en RAM aparece en archivos grandes, porque evita cualquier 
+lectura de disco adicional.
