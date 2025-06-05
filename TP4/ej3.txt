@@ -1,0 +1,14 @@
+FAT- file asignation table
+a) 
+1. Lee el sector de arranque (tabla de posiciones)
+2. Lee el directorio raiz y dentro de su cluster busca "fotos" 
+3. Lee el cluster de fotos y busca "barilo"
+4. Lee el cluster de barilo y busca "plaza.jpg"
+5. abre el archivo plaza.jpg
+
+Si el sistema no encuentra al buscar en cualquiera de estos pasos entonces el archivo no existe. 
+
+b) 
+Si el sistema encuentra el archivo buscado el primer paso para leerlo es ubicar el primer cluster  registrado en la entrada de directorio del archivo y ubicar su ubicacion fisica
+Una vez teniendo la ubicacion fisica del cluster el sistema accede al disco para leerlo. Si el archivo tiene varios clusteres, entonces habra que seguir la cadena de clusteres en la FAT
+Cada entrada en la FAT indica el siguiente cluster del archivo.

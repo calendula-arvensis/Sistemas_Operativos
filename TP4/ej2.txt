@@ -1,6 +1,5 @@
 los i-nodes:
  * todos los punteros a bloques de disco de un archivo se almacenan en un bloque de indices 
- * cada archivo tiene su propio bloque de indices 
  *en la entrada del directorio hay un puntero al bloque de indices
  
 
@@ -8,6 +7,13 @@ los i-nodes:
  El archivo se encuentra en: 
  /export/home/alumno/so/tareas.txt
  
-En un inodo hay 15 punteros, los primeros 12 de estos punteros son punteros a bloques directos, es decir, 
+    En un inodo hay 15 punteros, los primeros 12 de estos punteros son punteros a bloques directos, es decir, 
 que 12 de estos punteros tienen la direccion de bloques de informacion del archivo. 
-De los 3 punteros restantes, el primero es un puntero indirecto, es decir, que apunta a un bloque de punteros directos 
+De los 3 punteros restantes, el primero es un puntero indirecto, es decir, que apunta a un bloque de 12 punteros directos, 
+el segundo es un doble puntero indirecto, que contiene la direccion de un bloque que contiene un bloque de punteros indirectos, 
+y el tercero es un triple puntero indirecto, que contiene la direccion de un bloque de doble punteros directos.
+
+    Creo que oara acceder al archivo /export/home/alumno/so/tareas.txt se utilizaria un inodo por directorio,
+por lo que se utilizarian 5 inodos (5 accesos a disco) y 5 lecturas de los inodos (5 accesos a disco).
+
+ en total son 10 accesos a disco. 
