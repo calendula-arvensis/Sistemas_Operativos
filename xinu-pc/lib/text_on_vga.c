@@ -39,7 +39,7 @@ void draw_char_on_buffer(unsigned int x, unsigned int y, char c,
                         if (check_bit(col, j)) {
                                 pixel(x+i, y+j, 0x00000000);
                         } else {
-                                pixel(x+i, y+j, 0x00ffff00);
+                                pixel(x+i, y+j, 0xFFFFC0CB);
                         }
                 }
         }

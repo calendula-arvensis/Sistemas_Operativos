@@ -33,6 +33,7 @@ const	struct	cmdent	cmdtab[] = {
 	{"listarPrimos", FALSE, xsh_listarPrimos},
 	{"prodConsumidor", FALSE, xsh_prodConsumidor},
 	{"mut", FALSE, xsh_mut},
+	{"primosYBisiestos", FALSE, xsh_primosYBisiestos},
 	{"?",		FALSE,	xsh_help}
 
 };

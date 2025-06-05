@@ -91,5 +91,8 @@ extern shellcmd xsh_prodConsumidor();
 /*in file xsh_mut.c */
 extern shellcmd xsh_mut();
 
+/*in file xsh_primosYBisiestos.c*/
+extern shellcmd xsh_primosYBisiestos(int nargs, char *args[]);
+
 /* in file xsh_help.c */
 extern	shellcmd  xsh_help	(int32, char *[]);

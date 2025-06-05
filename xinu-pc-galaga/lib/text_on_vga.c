@@ -39,7 +39,7 @@ void draw_char_on_buffer(unsigned int x, unsigned int y, char c,
                         if (check_bit(col, j)) {
                                 pixel(x+i, y+j, 0x00000000);
                         } else {
-                                pixel(x+i, y+j, 0x00ffff00);
+                                pixel(x+i, y+j, 0xFFFFC0CB);
                         }
                 }
         }
@@ -57,7 +57,7 @@ void print_text_on_vga(unsigned int x, unsigned int y, char *text)
 
         /* Recorra el mensaje (puntero c) y dibuje cada letra en el
          * buffer utilizando la funcion draw_char_on_buffer() 
-         *
+         *0
          * Importante: cada letra ocupa 5 columnas, por lo que
          * cada letra debe ir ubicada 6 columnas mas adelante con 
          * respecto a la letra anterior (5 columnas + 1 espacio extra)
