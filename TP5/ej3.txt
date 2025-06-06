@@ -1,0 +1,10 @@
+a) Indique como son los campos de una direccion virtual en eun procesador Intel/AMD de arquitectura AMD64. Considere un sistema linux
+actual en ese sistema que usa tabla de paginas de 4KB
+
+una direccion virtual ocupa 64 bits(63-0)
+(63-48)(16 bits) de SIGN EXTEND donde se repite 15 veces el mismo valor, para detectar direcciones no canonicas
+(47-39)(9 bits) de PAGE-MAP LEVEL-4 OFFSET(PML4) seleccionan una entrada en la tabla PML4
+(38-30)(9 bits) de PAGE-DIRECTORY-POINTER OFFSET 
+(29-21)(9 bits) de PAGE-DIRECTORY OFFSET 
+(20-12)(9 bits) de PAGE-TABLE OFFSET
+(11-0)(9 bits) de PHYSICAL-PAGE OFFSET  

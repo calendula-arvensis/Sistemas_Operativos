@@ -43,3 +43,26 @@ indirecto(s) en UNIX‐FS.
     En síntesis, la ventaja de UNIX‐FS aparece en archivos que no necesitan indirectos (lectura inmediata de 
 punteros directos en RAM). La ventaja de FAT en RAM aparece en archivos grandes, porque evita cualquier 
 lectura de disco adicional.
+
+
+3a) Defienda o critique: Si, la rutina de interrumpiciones incluye tanto software y hardware
+3b) Si, porque son todos de familia UNIX, que estan basados en el estandar POSIX 
+3c) si, porque la memoria compartida funciona para darle a los procesos la opcion de compartir memoria al no hacerlo naturalmente(memoria viertual)
+En el caso de Xinu todos los procesos compartes todas las variables globales y no tienen necesidad de compartir memoria 
+3e) Android tiene un kernel linux, pero al no querer generar ingresos no creo que lo hayan considerado con seriedad.   
+
+
+Describa el sistema de pasaje de mensajes de XINU: 
+    Es sincronico, porque al utilizar los metodos send and receive que cortan la ejecucion hasta que la comunicacion es establecida 
+    usa un buffer de un solo mensaje, si llegan dos mensajes se pierde el segundo porque el buff ya esta ocupado. 
+
+"debido a que las aplicaciones utiliza el paradigma open write close para acceder a los dispositivos, tanto en xinu cono en unix, se hace dificil utilizas los dispositivos porque se confunden con archivos" 
+Falso, los dispositivos y archivos tienen distintos parametros, inconfundibles
+
+d) Si colapsa un thread colapsa el proceso en si, haciendo que todos colapsem, en cambio si colapsa un proceso, esto no hace que los otros procesos se colapsen. 
+
+sp 2023
+Los 12 bits menos significativos son los ultimos 12 bits que representan el desplazamiento de la direccion con respecto al puntero del marco que se forma con los otros bits de la direccion
+no existen estas funciones en xinu, como los procesos comparten el segmento de memoria y todas las variables globales, utilizarian la memoria como una memoria compartida, y se comunican entre ellos enviando mensajes entre procesos 
+
+calculo de inodos posin
